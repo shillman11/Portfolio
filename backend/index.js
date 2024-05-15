@@ -1,34 +1,54 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const {
+  smtpHost,
+  smtpUsername,
+  smtpPassword,
+  toEmail,
+  fromEmail,
+} = require("./Security");
 
 const app = express();
 const PORT = process.env.PORT || 5000; // Define the port your server will listen on
+
+console.log("smtpHost:", smtpHost);
+console.log("toEmail:", toEmail);
+console.log("fromEmail:", fromEmail);
 
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Define a route to handle the contact form submission
-app.post("/api/contact", (req, res) => {
-  const { name, email, message } = req.body;
-
+app.get("/api/contact", (req, res) => {
   // Create a nodemailer transporter
   const transporter = nodemailer.createTransport({
-    service: "Gmail", // Replace with your email service provider
+    host: smtpHost,
+    port: 465,
+    secure: true, // upgrade later with STARTTLS
     auth: {
-      user: "your-email@gmail.com", // Replace with your email address
-      pass: "your-email-password", // Replace with your email password
+      user: smtpUsername,
+      pass: smtpPassword,
     },
   });
 
   // Configure email data
   const mailOptions = {
-    from: email,
-    to: "your-email@gmail.com", // Replace with your email address
-    subject: "New Contact Form Submission",
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    from: fromEmail,
+    to: toEmail,
+    subject: "test",
+    text: "This is a test email from your Express server using Nodemailer",
   };
+
+  //verify connection configuration
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take our messages");
+    }
+  });
 
   // Send email
   transporter.sendMail(mailOptions, (error, info) => {
