@@ -1,0 +1,6 @@
+.header-container {
+  border: 1px solid blue;
+  width: 100vw;
+  position: sticky;
+  height: 80px;
+}

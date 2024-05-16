@@ -1,12 +1,21 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./styles/App.css";
+import TitleSection from "./components/TitleSection.jsx";
+import Header from "./components/Header.jsx";
+import AboutSection from "./components/AboutSection.jsx";
+import ProjectSection from "./components/ProjectSection.jsx";
+import ContactSection from "./components/ContactSection.jsx";
 
 function App() {
   return (
     <>
-      <div className="App">hi</div>
+      <div className="App">
+        <Header></Header>
+        <TitleSection></TitleSection>
+        <AboutSection></AboutSection>
+        <ProjectSection></ProjectSection>
+        <ContactSection></ContactSection>
+      </div>
     </>
   );
 }

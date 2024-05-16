@@ -37,8 +37,8 @@ app.get("/api/contact", (req, res) => {
   const mailOptions = {
     from: fromEmail,
     to: toEmail,
-    subject: "test",
-    text: "This is a test email from your Express server using Nodemailer",
+    subject: "Contact",
+    text: "testing ses again. hi",
   };
 
   //verify connection configuration
