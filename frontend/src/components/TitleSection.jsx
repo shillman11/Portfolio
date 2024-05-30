@@ -6,7 +6,7 @@ export default function TitleSection() {
       <div className="title-section">
         <div className="name-container">
           <div className="name-wrapper">
-            <div className="name" id="barnett">
+            <div className="name" id="barnett-shillman">
               Barnett Shillman
             </div>
           </div>
