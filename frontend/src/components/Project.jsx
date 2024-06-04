@@ -60,7 +60,7 @@ export default function Project({
                   </a>
 
                   <a
-                    href="http://www.youtube.com"
+                    href={liveSiteLink}
                     target="_blank"
                     className="project-link-container"
                   >
