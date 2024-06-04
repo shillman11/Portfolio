@@ -45,7 +45,8 @@ export default function ContactSection() {
             ></textarea>
             <div className="form-submit-container">
               <button type="submit" className="form-submit-button">
-                Send
+                <div className="button-text">Send</div>
+                <div className="button-text">Send</div>
               </button>
               <img
                 className="arrow-image"
