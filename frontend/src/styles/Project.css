@@ -1,13 +1,13 @@
 .projects-container {
   border: 1px solid powderblue;
   margin-top: 3rem;
+  margin-bottom: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   padding-left: 5vw;
   padding-right: 5vw;
   align-self: flex-start;
-  margin-bottom: 3rem;
 }
 
 .project-title {
@@ -31,7 +31,7 @@
   flex-direction: column;
   position: absolute;
   /* left: 10vw; */
-  bottom: calc(-1450px + (17vw * 3)); /*change for movement*/
+  /* bottom: calc(-1450px + (17vw * 3)); */
   left: 36vw;
   margin-right: 10vw;
   background-color: transparent;

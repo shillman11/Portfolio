@@ -5,6 +5,7 @@
   --title-text-size: 25px;
   --title-margin-bottom: 1rem;
   --content-background-color: rgb(26, 26, 26);
+  --site-margin: 3rem;
 }
 
 * {

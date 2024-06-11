@@ -2,3 +2,8 @@
   border: 1px solid red;
   width: 100%;
 }
+
+.section-title {
+  margin-left: var(--site-margin);
+  margin-top: 3rem;
+}

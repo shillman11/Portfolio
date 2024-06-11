@@ -16,9 +16,7 @@ export default function Project({
 
   return (
     <>
-      {console.log(scrollY.scrollY)}
       <div className="projects-container">
-        <div className="project-title section-title">Projects</div>
         <div className="title-divider"></div>
 
         <div className="project">
@@ -35,9 +33,8 @@ export default function Project({
             <div
               className="project-content-wrapper"
               style={{
-                transform: `translateY(-${
-                  scrollY.scrollY * 0.3 + bannerOffset
-                }px)`,
+                bottom: `calc(-${bannerOffset}px + (17vw * 3))`,
+                transform: `translateY(-${scrollY.scrollY * 0.3}px)`,
               }}
             >
               <div className="project-content-title">{title}</div>
