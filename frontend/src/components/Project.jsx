@@ -10,12 +10,13 @@ export default function Project({
   title,
   description,
   indent,
-  bannerOffset,
+  scrollRatio,
 }) {
   const scrollY = useScrollWheel();
 
   return (
     <>
+      {console.log(scrollY)}
       <div className="projects-container">
         <div className="title-divider"></div>
 
@@ -33,8 +34,10 @@ export default function Project({
             <div
               className="project-content-wrapper"
               style={{
-                bottom: `calc(-${bannerOffset}px + (17vw * 3))`,
-                transform: `translateY(-${scrollY.scrollY * 0.3}px)`,
+                // transform: `translateY(-${scrollY.scrollY / scrollRatio}px)`,
+                transform: `translateY(-${
+                  scrollY.scrollY / 4 + scrollRatio
+                }px)`,
               }}
             >
               <div className="project-content-title">{title}</div>

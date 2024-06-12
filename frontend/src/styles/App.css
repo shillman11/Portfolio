@@ -2,7 +2,7 @@
 
 :root {
   --text-padding: 10vw;
-  --title-text-size: 25px;
+  --title-text-size: 30px;
   --title-margin-bottom: 1rem;
   --content-background-color: rgb(26, 26, 26);
   --site-margin: 3rem;
@@ -52,7 +52,8 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 65vw;
+  gap: 3rem;
 }
 
 /* For WebKit-based browsers (Chrome, Safari) */

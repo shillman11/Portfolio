@@ -25,7 +25,7 @@ export default function ProjectSection({}) {
           title={weatherAPP.title}
           description={weatherAPP.description}
           indent={weatherAPP.indent}
-          bannerOffset={1500}
+          scrollRatio={50}
         ></Project>
 
         <Project
@@ -35,7 +35,7 @@ export default function ProjectSection({}) {
           title={memoryCardAPP.title}
           description={memoryCardAPP.description}
           indent={memoryCardAPP.indent}
-          bannerOffset={2400}
+          scrollRatio={-150}
         ></Project>
 
         <Project
@@ -45,7 +45,7 @@ export default function ProjectSection({}) {
           title={battleship.title}
           description={battleship.description}
           indent={battleship.indent}
-          bannerOffset={3200}
+          scrollRatio={-350}
         ></Project>
 
         <Project
@@ -55,7 +55,7 @@ export default function ProjectSection({}) {
           title={knightApp.title}
           description={knightApp.description}
           indent={knightApp.indent}
-          bannerOffset={4000}
+          scrollRatio={-550}
         ></Project>
 
         <Project
@@ -65,7 +65,7 @@ export default function ProjectSection({}) {
           title={ticTacToe.title}
           description={ticTacToe.description}
           indent={ticTacToe.indent}
-          bannerOffset={5000}
+          scrollRatio={-800}
         ></Project>
 
         <Project
@@ -75,7 +75,7 @@ export default function ProjectSection({}) {
           title={calculator.title}
           description={calculator.description}
           indent={calculator.indent}
-          bannerOffset={6000}
+          scrollRatio={-1000}
         ></Project>
       </div>
     </>

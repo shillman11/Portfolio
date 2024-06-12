@@ -4,6 +4,6 @@
 }
 
 .section-title {
-  margin-left: var(--site-margin);
+  /* margin-left: var(--site-margin); */
   margin-top: 3rem;
 }
