@@ -16,3 +16,8 @@
   border: 1px solid white;
   content: "";
 }
+
+.project-container {
+  /* border: 1px solid red; */
+  height: 500px;
+}

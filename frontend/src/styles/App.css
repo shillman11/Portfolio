@@ -16,9 +16,7 @@
   font-family: "Roboto", "Viaoda Libre", sans-serif;
   color: white;
   -webkit-user-drag: none;
-  user-select: none;
-  /* animation: background-color-change 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
-    forwards; */
+  /* user-select: none; */
 }
 
 html,
