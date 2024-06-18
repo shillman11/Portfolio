@@ -1,9 +1,56 @@
+import { useState } from "react";
 import "../styles/ContactSection.css";
 import ARROWICON from "../assets/icons/arrow-bottom-left.svg";
 import GITHUBICON from "../assets/icons/github logo.svg";
 import LINKEDINICON from "../assets/icons/linkedin logo.svg";
+import useFormData from "../hooks/useFormData";
 
 export default function ContactSection() {
+  const { formData, setFormData } = useFormData();
+  const [modalMessage, setModalMessage] = useState("");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevInfo) => ({
+      ...prevInfo,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // handle success
+        console.log("Message sent successfully");
+        setModalMessage("Message sent successfully!");
+      } else {
+        // handle error
+        console.error("Failed to send message");
+        setModalMessage("Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setModalMessage("Failed to send message: " + error);
+    }
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false); // Hide modal
+  };
+
+  console.log(formData, "formData");
+
   return (
     <>
       <div className="contact-container">
@@ -32,12 +79,14 @@ export default function ContactSection() {
               <img src={LINKEDINICON} alt="" className="contact-icon"></img>
             </a>
           </div>
-          <form action="" className="contact-form">
+          <form action="" className="contact-form" onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
               className="form-name"
               placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
               required
             />
             <input
@@ -45,6 +94,8 @@ export default function ContactSection() {
               name="email"
               className="form-email"
               placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
               required
             />
             <textarea
@@ -53,6 +104,8 @@ export default function ContactSection() {
               cols="30"
               rows="10"
               placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
               required
             ></textarea>
             <div className="form-submit-container">
@@ -70,6 +123,19 @@ export default function ContactSection() {
           </form>
         </div>
       </div>
+
+      {isModalVisible && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <div className="modal-content">
+              <p>{modalMessage}</p>
+              <button onClick={closeModal} className="modal-close-button">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
