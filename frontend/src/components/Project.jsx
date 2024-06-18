@@ -10,13 +10,13 @@ export default function Project({
   title,
   description,
   indent,
-  scrollRatio,
+  bannerScrollRatio,
+  imageScrollRatio,
 }) {
   const scrollY = useScrollWheel();
 
   return (
     <>
-      {console.log(scrollY)}
       <div className="projects-container">
         <div className="title-divider"></div>
 
@@ -27,16 +27,20 @@ export default function Project({
               <img
                 src={image}
                 alt=""
-                className="project-image weather-image"
-                id="weather"
+                className="project-image"
+                style={{
+                  transform: `translateY(-${
+                    scrollY.scrollY / 10 + imageScrollRatio
+                  }px)`,
+                }}
               />
+              <div className="project-image-box"></div>
             </div>
             <div
               className="project-content-wrapper"
               style={{
-                // transform: `translateY(-${scrollY.scrollY / scrollRatio}px)`,
                 transform: `translateY(-${
-                  scrollY.scrollY / 4 + scrollRatio
+                  scrollY.scrollY / 4 + bannerScrollRatio
                 }px)`,
               }}
             >

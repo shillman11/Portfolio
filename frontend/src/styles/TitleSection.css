@@ -4,7 +4,7 @@
 }
 
 .title-section {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* width: 80vw; */
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
 }
 
 .name-container {
-  border: 1px solid plum;
+  /* border: 1px solid plum; */
   width: 80vw;
   display: flex;
   flex-direction: column;

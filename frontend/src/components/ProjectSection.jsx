@@ -12,12 +12,14 @@ export default function ProjectSection({}) {
     knightApp,
     gameStore,
     ticTacToe,
+    resume,
   } = useProjects();
 
   return (
     <>
       <div className="project-section-container">
         <div className="project-title section-title">Projects</div>
+
         <Project
           githubLink={weatherAPP.github}
           liveSiteLink={weatherAPP.liveSite}
@@ -25,7 +27,8 @@ export default function ProjectSection({}) {
           title={weatherAPP.title}
           description={weatherAPP.description}
           indent={weatherAPP.indent}
-          scrollRatio={50}
+          bannerScrollRatio={50}
+          imageScrollRatio={0}
         ></Project>
 
         <Project
@@ -35,7 +38,19 @@ export default function ProjectSection({}) {
           title={memoryCardAPP.title}
           description={memoryCardAPP.description}
           indent={memoryCardAPP.indent}
-          scrollRatio={-150}
+          bannerScrollRatio={-150}
+          imageScrollRatio={-100}
+        ></Project>
+
+        <Project
+          githubLink={resume.github}
+          liveSiteLink={resume.liveSite}
+          image={resume.image}
+          title={resume.title}
+          description={resume.description}
+          indent={resume.indent}
+          bannerScrollRatio={-350}
+          imageScrollRatio={-200}
         ></Project>
 
         <Project
@@ -45,7 +60,8 @@ export default function ProjectSection({}) {
           title={battleship.title}
           description={battleship.description}
           indent={battleship.indent}
-          scrollRatio={-350}
+          bannerScrollRatio={-550}
+          imageScrollRatio={-270}
         ></Project>
 
         <Project
@@ -55,10 +71,11 @@ export default function ProjectSection({}) {
           title={knightApp.title}
           description={knightApp.description}
           indent={knightApp.indent}
-          scrollRatio={-550}
+          bannerScrollRatio={-800}
+          imageScrollRatio={-370}
         ></Project>
 
-        <Project
+        {/* <Project
           githubLink={ticTacToe.github}
           liveSiteLink={ticTacToe.liveSite}
           image={ticTacToe.image}
@@ -76,7 +93,7 @@ export default function ProjectSection({}) {
           description={calculator.description}
           indent={calculator.indent}
           scrollRatio={-1000}
-        ></Project>
+        ></Project> */}
       </div>
     </>
   );

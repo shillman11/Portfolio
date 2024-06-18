@@ -5,6 +5,7 @@ import CALCULATOR from "../assets/icons/calculator.jpg";
 import KNIGHTTRAVAILS from "../assets/icons/knight.jpg";
 import GAMESTORE from "../assets/icons/gamestore.jpg";
 import TICTACTOE from "../assets/icons/tictactoe.jpg";
+import RESUME from "../assets/icons/resume.jpg";
 
 const useProjects = () => {
   const weatherAPP = {
@@ -77,6 +78,16 @@ const useProjects = () => {
     indent: "Using MinMax Algorithm",
   };
 
+  const resume = {
+    title: "Resume Builder",
+    image: RESUME,
+    github: "https://github.com/shillman11/Resume",
+    liveSite: "https://shillman11.github.io/Resume/",
+    description:
+      "This App is meant for the user to be able to create their own resume by entering their personal, educational and work experience.",
+    indent: "Using React/Vite",
+  };
+
   return {
     weatherAPP,
     memoryCardAPP,
@@ -85,6 +96,7 @@ const useProjects = () => {
     knightApp,
     gameStore,
     ticTacToe,
+    resume,
   };
 };
 

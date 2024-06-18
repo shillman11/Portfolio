@@ -17,8 +17,20 @@ export default function ContactSection() {
 
         <div className="contact-form-container">
           <div className="contact-form-icons-container">
-            <img src={GITHUBICON} alt="" className="contact-icon"></img>
-            <img src={LINKEDINICON} alt="" className="contact-icon"></img>
+            <a
+              href="https://github.com/shillman11"
+              target="_blank"
+              className="githublink"
+            >
+              <img src={GITHUBICON} alt="" className="contact-icon"></img>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/barnett-shillman-231b31b1/"
+              target="_blank"
+              className="githublink"
+            >
+              <img src={LINKEDINICON} alt="" className="contact-icon"></img>
+            </a>
           </div>
           <form action="" className="contact-form">
             <input
