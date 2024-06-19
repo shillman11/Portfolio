@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const cors = require("cors");
 const {
   smtpHost,
   smtpUsername,
@@ -18,10 +19,23 @@ console.log("fromEmail:", fromEmail);
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Define a route to handle the contact form submission
-app.get("/api/contact", (req, res) => {
+app.post("/api/contact", (req, res) => {
+  const { name, email, message } = req.body; //extract form data from request body
+
+  // console.log(req.body, "reqbody------------------------");
+  // console.log(
+  //   name,
+  //   "name",
+  //   email,
+  //   "email",
+  //   message,
+  //   "message---------------------------"
+  // );
+
   // Create a nodemailer transporter
   const transporter = nodemailer.createTransport({
     host: smtpHost,
@@ -38,7 +52,7 @@ app.get("/api/contact", (req, res) => {
     from: fromEmail,
     to: toEmail,
     subject: "Contact",
-    text: "testing ses again. hi",
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`, // Included form data in email body,
   };
 
   //verify connection configuration

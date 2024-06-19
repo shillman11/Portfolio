@@ -193,3 +193,7 @@ textarea {
 .modal-close-button:hover {
   background: rgb(0, 141, 141);
 }
+
+.checkIcon {
+  height: 50px;
+}

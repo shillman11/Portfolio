@@ -4,6 +4,7 @@ import ARROWICON from "../assets/icons/arrow-bottom-left.svg";
 import GITHUBICON from "../assets/icons/github logo.svg";
 import LINKEDINICON from "../assets/icons/linkedin logo.svg";
 import useFormData from "../hooks/useFormData";
+import CHECKICON from "../assets/icons/check.svg";
 
 export default function ContactSection() {
   const { formData, setFormData } = useFormData();
@@ -21,7 +22,8 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/contact", {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        mode: "cors",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,8 +33,8 @@ export default function ContactSection() {
 
       if (response.ok) {
         // handle success
-        console.log("Message sent successfully");
         setModalMessage("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
       } else {
         // handle error
         console.error("Failed to send message");
@@ -48,8 +50,6 @@ export default function ContactSection() {
   const closeModal = () => {
     setIsModalVisible(false); // Hide modal
   };
-
-  console.log(formData, "formData");
 
   return (
     <>
@@ -128,7 +128,19 @@ export default function ContactSection() {
         <div className="modal-overlay">
           <div className="modal">
             <div className="modal-content">
-              <p>{modalMessage}</p>
+              <p className="modal-message">
+                {modalMessage === "Message sent successfully!" && (
+                  <div className="checkIcon-container">
+                    <img
+                      src={CHECKICON}
+                      alt="check icon"
+                      className="checkIcon"
+                    />
+                  </div>
+                )}
+                {modalMessage}
+              </p>
+
               <button onClick={closeModal} className="modal-close-button">
                 Close
               </button>
