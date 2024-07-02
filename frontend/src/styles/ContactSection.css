@@ -95,7 +95,7 @@ textarea {
 }
 
 .contact-form-icons-container {
-  /* border: 1px dotted yellow; */
+  /* border: 3px dotted yellow; */
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -196,4 +196,84 @@ textarea {
 
 .checkIcon {
   height: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-container {
+    width: 100vw;
+    height: auto;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-title {
+    margin-top: 2rem;
+    margin-left: 0;
+    font-size: var(--title-text-size);
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-content-container {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .contact-form-container {
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-right: 0;
+    gap: 0px;
+  }
+
+  .contact-form {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80vw;
+    justify-content: center;
+  }
+
+  .contact-form-icons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-icon {
+    height: 40px;
+  }
+
+  .contact-icon:hover {
+    cursor: pointer;
+    scale: 1;
+  }
+
+  #form-message {
+    height: 100px;
+  }
+
+  .form-submit-container {
+    display: flex;
+    margin-bottom: 3rem;
+    height: fit-content;
+    align-items: center;
+    width: fit-content;
+    align-self: center;
+  }
 }

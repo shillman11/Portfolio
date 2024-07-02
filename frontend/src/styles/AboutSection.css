@@ -63,3 +63,28 @@ p {
   height: 60px;
   -webkit-user-drag: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    /* border: 1px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2rem;
+    height: 500px;
+    overflow: scroll;
+    scrollbar-width: none;
+    row-gap: 0px;
+  }
+
+  .about-title {
+    font-size: var(--title-text-size);
+    margin-bottom: var(--title-margin-bottom);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+}

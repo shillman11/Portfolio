@@ -1,2 +1,5 @@
 @media only screen and (max-width: 600px) {
+  .section-container {
+    transform: scale(1) !important;
+  }
 }

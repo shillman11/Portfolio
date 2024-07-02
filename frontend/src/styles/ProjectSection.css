@@ -4,7 +4,6 @@
 }
 
 .section-title {
-  /* margin-left: var(--site-margin); */
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
@@ -20,4 +19,15 @@
 .project-container {
   /* border: 1px solid red; */
   height: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+  .section-title {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem !important;
+  }
 }
